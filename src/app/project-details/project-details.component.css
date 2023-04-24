@@ -1,0 +1,92 @@
+.job-details {
+  margin: 50px;
+  padding: 50px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  font-size: 18px;
+}
+
+.job-header {
+  margin-bottom: 30px;
+}
+
+.job-header h1 {
+  font-size: 36px;
+  margin: 0;
+  padding: 0;
+}
+
+.job-header p {
+  margin: 5px 0 0;
+  font-style: italic;
+}
+
+.job-description,
+.job-requirements,
+.job-salary {
+  margin-bottom: 30px;
+}
+
+.job-description h2,
+.job-requirements h2,
+.job-salary h2 {
+  font-size: 24px;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.job-description p,
+.job-requirements p,
+.job-salary p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .job-details {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .job-header h1 {
+    font-size: 24px;
+  }
+
+  .job-description h2,
+  .job-requirements h2,
+  .job-salary h2 {
+    font-size: 20px;
+  }
+
+  .job-description p,
+  .job-requirements p,
+  .job-salary p {
+    font-size: 16px;
+  }
+}
+
+.recruiter-info {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.recruiter-info img {
+  width: 100px;
+  height: 10%;
+  border-radius: 50%;
+}
+
+.recruiter-info h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.recruiter-info p {
+  font-size: 18px;
+  margin-bottom: 5px;
+}

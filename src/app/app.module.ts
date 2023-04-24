@@ -10,8 +10,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { AppComponent } from './app.component';
 import { JobBoardComponent } from './job-board/job-board.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
 
 
 @NgModule({
@@ -20,6 +22,7 @@ import { ContactComponent } from './contact/contact.component';
     JobBoardComponent,
     AboutComponent,
     ContactComponent,
+    ProjectDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { ContactComponent } from './contact/contact.component';
     MatButtonModule,
     MatIconModule,
     MatMenuModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
