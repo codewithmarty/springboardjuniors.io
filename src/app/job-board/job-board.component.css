@@ -1,0 +1,65 @@
+
+.job-board {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.job-board h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.job-board hr {
+  border-top: 2px solid #f0f0f0;
+  margin: 2rem 0;
+}
+
+.job-post {
+  background-color: white;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.job-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.job-header h3 {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.job-header span {
+  font-size: 1rem;
+  color: #666;
+}
+
+.job-body {
+  margin-top: 1rem;
+}
+
+.job-body p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.job-body strong {
+  font-weight: bold;
+}

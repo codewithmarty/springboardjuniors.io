@@ -1,0 +1,16 @@
+<div class="job-board">
+  <h1>Job Board</h1>
+  <hr>
+  <div class="job-post" *ngFor="let job of jobs">
+    <div class="job-header">
+      <h2>{{ job.title }}</h2>
+      <h3>{{ job.company }}</h3>
+      <span>{{ job.location }}</span>
+    </div>
+    <div class="job-body">
+      <p>{{ job.description }}</p>
+      <p><strong>Requirements:</strong> {{ job.requirements }}</p>
+      <p><strong>Salary:</strong> {{ job.salary }}</p>
+    </div>
+  </div>
+</div>
