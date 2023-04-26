@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { AppComponent } from '../app.component';
 
 interface AuthResponse {
   token: string;
@@ -21,6 +22,7 @@ export class RegistrationComponent {
     private fb: FormBuilder, 
     private http: HttpClient,
     private authService: AuthService,
+    private appComponent: AppComponent,
     private router: Router
     ) {
     this.signupForm = this.fb.group({
@@ -47,11 +49,12 @@ export class RegistrationComponent {
         response => {
           localStorage.setItem('token', response.token);
           this.authService.setUser(response.user)
+          this.appComponent.user = response.user
           this.router.navigate(['/'])
         },
         error => console.log(error)
-      );
-  }
+        );
+      }
 
   getLogin() {
     this.router.navigate(['/login'])

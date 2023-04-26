@@ -2,3 +2,25 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.auth-toggle {
+    background: linear-gradient(to bottom, #0e1f04, #0c7708);
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+  }
+  
+  .auth-toggle:hover {
+    background: linear-gradient(to bottom, #0c7708, #0e1f04);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .auth-toggle:active {
+    transform: translateY(1px);
+    box-shadow: none;
+  }

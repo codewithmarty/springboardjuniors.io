@@ -16,7 +16,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
-
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,7 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

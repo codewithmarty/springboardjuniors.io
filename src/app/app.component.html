@@ -5,7 +5,7 @@
     <p *ngIf="user">Hi, {{user?.first_name}} {{user?.last_name}}</p>
     <a mat-button routerLink="/about">About</a>
     <a mat-button routerLink="/contact">Contact</a>
-    <a mat-button *ngIf="user" (click)="onClick()">Log Out</a>
+    <a mat-button *ngIf="user" (click)="handleLogout()">Log Out</a>
     <a mat-button *ngIf="!user" routerLink="/register">Register</a>
   </mat-toolbar>  
 </div>

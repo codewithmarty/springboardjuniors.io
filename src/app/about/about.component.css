@@ -11,4 +11,9 @@
   font-size: 1.2rem;
   line-height: 1.5;
   margin-bottom: 20px;
+  text-align: justify;
+}
+
+.about-container img {
+  width: 100%;
 }

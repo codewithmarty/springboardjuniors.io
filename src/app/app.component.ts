@@ -16,7 +16,7 @@ interface AuthResponse {
 })
 export class AppComponent {
 
-  user: any;
+  user: User | any;
 
   constructor(
     private router: Router,
@@ -38,13 +38,16 @@ export class AppComponent {
     }
   }
 
-  onClick() {
+
+
+  handleLogout() {
     localStorage.removeItem('token')
     this.http.get<AuthResponse>(`http://localhost:8000/${this.user.id}/logout`).subscribe(response => {
       console.log(response.status)
     },
       error => console.log(error)
     )
+    this.user = null
     this.authService.setUser(null)
   }
   
