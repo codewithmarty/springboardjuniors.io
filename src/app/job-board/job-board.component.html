@@ -1,7 +1,7 @@
 <div class="job-board">
   <h1>Job Board</h1>
   <hr>
-  <div class="job-post" *ngFor="let job of jobs" (click)="goToJobDetails(job.id)" [routerLink]=[job.id]>
+  <div class="job-post" *ngFor="let job of jobs" (click)="goToJobDetails(job.id.toString())" [routerLink]=[job.id]>
     <div class="job-header">
       <h2>{{ job.title }}</h2>
       <div>

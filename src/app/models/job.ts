@@ -1,5 +1,5 @@
 export interface Job {
-  id: string
+  id: number
   title: string
   company: string
   location: string
@@ -7,8 +7,14 @@ export interface Job {
   requirements: string
   salary: string
   recruiter: {
-    name: string
+    id: number
+    last_login: string
+    username: string
+    first_name: string
+    last_name: string
     email: string
-    phone: string
+    is_active: boolean
+    date_joined: string
   }
 }
+

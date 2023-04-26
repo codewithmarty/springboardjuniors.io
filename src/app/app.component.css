@@ -10,3 +10,7 @@
 .logo {
   width: 6rem;
 }
+
+.container >.mat-toolbar > p {
+  font-size: 15px;
+}

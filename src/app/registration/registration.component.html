@@ -1,0 +1,33 @@
+<div class="signup-form">
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <h1>Sign Up</h1>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" name="username" formControlName="username" id="username" placeholder="Enter username">
+    </div>
+    <div class="form-group">
+      <label for="first_name">First Name</label>
+      <input type="text" name="first_name" formControlName="first_name" id="first_name" placeholder="Enter first name">
+    </div>
+    <div class="form-group">
+      <label for="last_name">Last Name</label>
+      <input type="text" name="last_name" formControlName="last_name" id="last_name" placeholder="Enter last name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" name="email" formControlName="email" id="email" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="password1">Password</label>
+      <input type="password" name="password1" formControlName="password1" id="password1" placeholder="Enter password">
+    </div>
+    <div class="form-group">
+      <label for="password2">Confirm Password</label>
+      <input type="password" name="password2" formControlName="password2" id="password2" placeholder="Confirm password">
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Register</button>
+    </div>
+  </form>
+  Already a user? <button (click)="getLogin()">Login</button>
+</div>
