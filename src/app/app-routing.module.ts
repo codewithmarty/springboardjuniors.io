@@ -6,13 +6,15 @@ import { ContactComponent } from './contact/contact.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
+import { CreateJobComponent } from './create-job/create-job.component';
 
 const routes: Routes = [
   { path: '', component: JobBoardComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'register', component: RegistrationComponent},
-  { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegistrationComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'new', component: CreateJobComponent },
   { path: ':id', component: ProjectDetailsComponent }
 ];
 

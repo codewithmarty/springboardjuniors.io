@@ -10,12 +10,10 @@ export class AuthService {
   constructor() { }
 
   setUser(user: any) {
-    console.log('in set user')
     this.user$.next(user);
   }
 
   getUser() {
-    console.log('in get user')
     return this.user$.asObservable();
   }
   

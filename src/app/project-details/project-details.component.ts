@@ -28,9 +28,7 @@ export class ProjectDetailsComponent {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       const id = params.get('id')
-      if (id) this.jobService.getJob(id).subscribe(job => this.job = job);
-        this.http.get<JobResponse>(`http://localhost:8000/${id}`).subscribe(resp => {
-        console.log(resp.data)
+      this.http.get<JobResponse>(`http://localhost:8000/${id}`).subscribe(resp => {
         this.job = resp.data
       })
     })

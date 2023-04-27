@@ -17,6 +17,7 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './auth.service';
+import { CreateJobComponent } from './create-job/create-job.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AuthService } from './auth.service';
     ProjectDetailsComponent,
     RegistrationComponent,
     LoginComponent,
+    CreateJobComponent,
   ],
   imports: [
     BrowserModule,

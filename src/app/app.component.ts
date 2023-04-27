@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { User } from './models/user';
@@ -19,7 +18,6 @@ export class AppComponent {
   user: User | any;
 
   constructor(
-    private router: Router,
     private authService: AuthService,
     private http: HttpClient
   ) {}
@@ -43,7 +41,6 @@ export class AppComponent {
   handleLogout() {
     localStorage.removeItem('token')
     this.http.get<AuthResponse>(`http://localhost:8000/${this.user.id}/logout`).subscribe(response => {
-      console.log(response.status)
     },
       error => console.log(error)
     )

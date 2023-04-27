@@ -6,6 +6,7 @@ export interface Job {
   description: string
   requirements: string
   salary: string
+  challenge: string
   recruiter: {
     id: number
     last_login: string

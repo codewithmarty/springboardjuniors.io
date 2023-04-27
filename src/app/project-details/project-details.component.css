@@ -7,6 +7,57 @@
   font-size: 18px;
 }
 
+.job-details > div {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.job-apply {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.apply-job-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.apply-job-form h1 {
+  margin-bottom: 30px;
+}
+
+.apply-job-form .btn {
+  background-color: #0b5394;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.apply-job-form .btn:hover {
+  background-color: #063473;
+}
+
+.apply-job-form input[type="text"] {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
 .job-header {
   margin-bottom: 30px;
 }

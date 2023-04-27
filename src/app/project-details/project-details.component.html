@@ -1,20 +1,46 @@
 <div class="job-details">
-  <div class="job-info">
-    <div class="job-header">
-      <h1>{{job?.title}}</h1>
-      <p>{{job?.company}} - {{job?.location}}</p>
+  <div>
+    <div class="job-info">
+      <div class="job-header">
+        <h1>{{job?.title}}</h1>
+        <p>{{job?.company}} - {{job?.location}}</p>
+      </div>
+      <div class="job-description">
+        <h2>Description</h2>
+        <p>{{job?.description}}</p>
+      </div>
+      <div class="job-requirements">
+        <h2>Requirements</h2>
+        <p>{{job?.requirements}}</p>
+      </div>
+      <div class="job-salary">
+        <h2>Salary</h2>
+        <p>{{job?.salary}}</p>
+      </div>
+      <div class="job-salary">
+        <h2>Technical Challenge</h2>
+        <p>{{job?.challenge}}</p>
+      </div>
     </div>
-    <div class="job-description">
-      <h2>Description</h2>
-      <p>{{job?.description}}</p>
-    </div>
-    <div class="job-requirements">
-      <h2>Requirements</h2>
-      <p>{{job?.requirements}}</p>
-    </div>
-    <div class="job-salary">
-      <h2>Salary</h2>
-      <p>{{job?.salary}}</p>
+    <div class="job-apply">
+      <h2>Apply for Job</h2>
+      <form class="apply-job-form">
+        <div class="form-group">
+          <label for="portfolio_link">Portfolio Link:</label>
+          <input type="text" name="portfolio_link" id="portfolio_link" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="github_link">GitHub Link (for Technical):</label>
+          <input type="text" name="github_link" id="github_link" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="deployed_link">Deployed Link (for Technical):</label>
+          <input type="text" name="deployed_link" id="deployed_link" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Apply</button>
+        </div>
+      </form>
     </div>
   </div>
   <div class="recruiter-info">
@@ -26,4 +52,3 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Woman_1.jpg/800px-Woman_1.jpg" alt="" />
   </div>  
 </div>
-  
