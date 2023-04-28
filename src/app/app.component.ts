@@ -23,6 +23,14 @@ export class AppComponent {
   ) {}
 
   ngOnInit() {
+    this.grabUser()
+    this.authService.getUser().subscribe((user: User) => {
+      this.user = user;
+    });    
+  }
+  
+
+  grabUser() {
     const token = localStorage.getItem('token')
     if (token) {
       this.http.get<AuthResponse>(`http://localhost:8000/get_user?token=${token}`).subscribe(response => {
@@ -30,13 +38,8 @@ export class AppComponent {
       }, 
         error => console.log(error)
       )
-      this.authService.getUser().subscribe((user: User) => {
-        this.user = user;
-      });    
     }
   }
-
-
 
   handleLogout() {
     localStorage.removeItem('token')

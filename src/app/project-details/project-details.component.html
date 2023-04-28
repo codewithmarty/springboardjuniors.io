@@ -24,18 +24,20 @@
     </div>
     <div class="job-apply">
       <h2>Apply for Job</h2>
-      <form class="apply-job-form">
+      <h4 *ngIf="!this.user">Only logged in users can apply</h4>
+      <h4 *ngIf="this.jobApplication && this.user">You've already applied to this job</h4>
+      <form class="apply-job-form" *ngIf="!this.jobApplication.deployed_link && this.user" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="portfolio_link">Portfolio Link:</label>
-          <input type="text" name="portfolio_link" id="portfolio_link" class="form-control" required>
+          <input type="text" name="portfolio_link" id="portfolio_link" [(ngModel)]="jobApplication.portfolio_link" class="form-control" required>
         </div>
         <div class="form-group">
           <label for="github_link">GitHub Link (for Technical):</label>
-          <input type="text" name="github_link" id="github_link" class="form-control" required>
+          <input type="text" name="github_link" id="github_link" [(ngModel)]="jobApplication.github_link" class="form-control" required>
         </div>
         <div class="form-group">
           <label for="deployed_link">Deployed Link (for Technical):</label>
-          <input type="text" name="deployed_link" id="deployed_link" class="form-control" required>
+          <input type="text" name="deployed_link" id="deployed_link" [(ngModel)]="jobApplication.deployed_link" class="form-control" required>
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-primary">Apply</button>
@@ -49,6 +51,6 @@
       <p><strong>Name:</strong> {{job?.recruiter?.first_name}} {{job?.recruiter?.last_name}}</p>
       <p><strong>Email:</strong> {{job?.recruiter?.email}}</p>
     </div>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Woman_1.jpg/800px-Woman_1.jpg" alt="" />
+    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="" />
   </div>  
 </div>
