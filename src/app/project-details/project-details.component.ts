@@ -26,6 +26,7 @@ export class ProjectDetailsComponent {
   job: Job | null = null;
   user: any;
   jobApplication =  {
+    user: 0,
     portfolio_link: '',
     github_link: '',
     deployed_link: ''
@@ -39,23 +40,28 @@ export class ProjectDetailsComponent {
   ) { }
 
   ngOnInit(): void {
-    this.appComponent.grabUser()
+    this.fetchInfo()
+  }
+
+  fetchInfo() {
     this.authService.getUser().subscribe((user: User) => {
       this.user = user;
+      this.route.paramMap.subscribe(params => {
+        const id = params.get('id')
+        this.http.get<JobResponse>(`http://localhost:8000/${id}`).subscribe(resp => {
+          this.job = resp.data
+        })
+        if (this.user) this.http.get<JobApplicationResponse>(`http://localhost:8000/${this.appComponent.user.id}/get_applications/${id}/`).subscribe(resp => {
+          if (resp.data) {
+            console.log(resp.data)
+            this.jobApplication.user = resp.data.user
+            this.jobApplication.deployed_link = resp.data.deployed_link
+            this.jobApplication.github_link = resp.data.github_link
+            this.jobApplication.portfolio_link = resp.data.portfolio_link
+          }
+        })
+      })
     }); 
-    this.route.paramMap.subscribe(params => {
-      const id = params.get('id')
-      this.http.get<JobResponse>(`http://localhost:8000/${id}`).subscribe(resp => {
-        this.job = resp.data
-      })
-      if (this.appComponent.user) this.http.get<JobApplicationResponse>(`http://localhost:8000/${this.appComponent.user.id}/get_applications/${id}/`).subscribe(resp => {
-        if (resp.data) {
-          this.jobApplication.deployed_link = resp.data.deployed_link
-          this.jobApplication.github_link = resp.data.github_link
-          this.jobApplication.portfolio_link = resp.data.portfolio_link
-        }
-      })
-    })
   }
 
   onSubmit() {
@@ -68,7 +74,7 @@ export class ProjectDetailsComponent {
     this.route.paramMap.subscribe(params => {
       const id = params.get('id')
       this.http.post<JobApplicationResponse>(`http://localhost:8000/${this.appComponent.user.id}/apply/${id}/`, formData).subscribe(resp => {
-        console.log(resp.data)
+        this.fetchInfo()
       })
     })
 

@@ -1,0 +1,50 @@
+<div class="dashboard-container">
+<h1>Dashboard</h1>
+<div class="dashboard-row">
+
+    <div class="dashboard-profile-info">
+        <div>
+            <h2>My Profile</h2>
+            <p>Name: {{user?.first_name}} {{user?.last_name}}</p>
+            <p>Username: {{user?.username}}</p>
+            <p>Email: {{user?.email}}</p>
+        </div>
+        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="" />
+    </div>
+
+    <div class="dashboard-jobs-applied">
+        <h2>Jobs I've Applied For:</h2>
+        <h5 *ngIf="!jobsApplied.length">No jobs yet..</h5>
+        <div *ngIf="jobsApplied.length">
+            <div class="job-card" *ngFor="let job of jobsApplied">
+                <div>
+                    <h3>{{job.title}}</h3>
+                    <p>{{job.description}}</p>
+                    <p><strong>{{job.company}}</strong> {{job.location}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="dashboard-jobs-created">
+        <h2>My Jobs</h2>
+        <h5 *ngIf="!jobsCreated.length">No jobs yet..</h5>
+        <div *ngIf="jobsCreated.length">
+            <div class="job-card" *ngFor="let job of jobsCreated">
+                <div>
+                    <h3>{{job.title}}</h3>
+                    <p>{{job.description}}</p>
+                    <p><strong>{{job.company}}</strong> {{job.location}}</p>
+                </div>
+
+                <div>
+                    <button class="delete-button" (click)="toggleButton(job.id)">Delete</button>
+                    <p [hidden]="!isDeleteButtonVisible(job.id)">Are you sure? <button class="confirm-delete" (click)="deleteJob(job.id)">Yes</button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+  

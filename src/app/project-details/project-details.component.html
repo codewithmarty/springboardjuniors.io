@@ -25,8 +25,9 @@
     <div class="job-apply">
       <h2>Apply for Job</h2>
       <h4 *ngIf="!this.user">Only logged in users can apply</h4>
-      <h4 *ngIf="this.jobApplication && this.user">You've already applied to this job</h4>
-      <form class="apply-job-form" *ngIf="!this.jobApplication.deployed_link && this.user" (ngSubmit)="onSubmit()">
+      <h4 *ngIf="this.job?.recruiter?.id == this.user.id">You cannot apply to your own job posting</h4>
+      <h4 *ngIf="this.jobApplication.user == this.user.id && this.job?.recruiter?.id !== this.user.id">You've already applied to this job</h4>
+      <form class="apply-job-form" *ngIf="this.job?.recruiter?.id !== this.user.id && this.jobApplication.user !== this.user.id" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="portfolio_link">Portfolio Link:</label>
           <input type="text" name="portfolio_link" id="portfolio_link" [(ngModel)]="jobApplication.portfolio_link" class="form-control" required>

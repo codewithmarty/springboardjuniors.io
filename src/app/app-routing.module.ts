@@ -7,11 +7,13 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { CreateJobComponent } from './create-job/create-job.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', component: JobBoardComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'new', component: CreateJobComponent },

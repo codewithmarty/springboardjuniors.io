@@ -1,3 +1,33 @@
+.create-job-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.info-container {
+  max-width: 800px;
+  height: 70rem;
+  margin: 2rem auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.info-container h1 {
+  text-align: center;
+}
+
+.about-text {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.info-container img {
+  width: 100%;
+  border-radius: 10px;
+}
+
 .create-job-form {
   width: 100%;
   max-width: 600px;

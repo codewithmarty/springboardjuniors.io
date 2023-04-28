@@ -1,0 +1,134 @@
+.dashboard-container {
+    margin: 2rem 1rem;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.dashboard-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashboard-jobs-applied,
+.dashboard-jobs-created,
+.dashboard-profile-info {
+    width: 80%;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.dashboard-jobs-applied h2,
+.dashboard-jobs-created h2,
+.dashboard-profile-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.dashboard-jobs-applied .job-container,
+.dashboard-jobs-created .job-container {
+    margin-top: 10px;
+}
+
+.dashboard-jobs-applied .job-container:last-child,
+.dashboard-jobs-created .job-container:last-child {
+    margin-bottom: 0;
+}
+
+.dashboard-jobs-applied .job-container h3,
+.dashboard-jobs-created .job-container h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.dashboard-jobs-applied .job-container p,
+.dashboard-jobs-created .job-container p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.dashboard-jobs-applied .job-container .job-date,
+.dashboard-jobs-created .job-container .job-date {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.dashboard-jobs-applied h5,
+.dashboard-jobs-created h5 {
+    color: #2ea300;
+}
+
+.dashboard-profile-info p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.dashboard-profile-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.dashboard-profile-info img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.job-card {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px;
+    margin: 1rem auto;
+    box-shadow: 0px 2px 5px rgba(191, 180, 255, 0.2);
+}
+
+.dashboard-profile-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.delete-button,
+.confirm-delete {
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.confirm-delete {
+    background-color: #2ea300;
+}
+
+.delete-button {
+    background-color: #e74c3c;
+}
+
+.confirm-delete {
+    margin: 0 1rem;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}
+
+.confirm-delete:hover {
+    background-color: #1e6b00;
+}
