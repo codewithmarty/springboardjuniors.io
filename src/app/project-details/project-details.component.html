@@ -25,7 +25,7 @@
     <div class="job-apply">
       <h2>Apply for Job</h2>
       <h4 *ngIf="!this.user">Only logged in users can apply</h4>
-      <h4 *ngIf="this.job?.recruiter?.id == this.user.id">You cannot apply to your own job posting</h4>
+      <h4 *ngIf="this.user && this.job?.recruiter?.id == this.user.id">You cannot apply to your own job posting</h4>
       <h4 *ngIf="this.jobApplication.user == this.user.id && this.job?.recruiter?.id !== this.user.id">You've already applied to this job</h4>
       <form class="apply-job-form" *ngIf="this.job?.recruiter?.id !== this.user.id && this.jobApplication.user !== this.user.id" (ngSubmit)="onSubmit()">
         <div class="form-group">
@@ -49,9 +49,11 @@
   <div class="recruiter-info">
     <div>
       <h2>Recruiter Information</h2>
-      <p><strong>Name:</strong> {{job?.recruiter?.first_name}} {{job?.recruiter?.last_name}}</p>
-      <p><strong>Email:</strong> {{job?.recruiter?.email}}</p>
+      <p *ngIf="!this.user">Must be logged in</p>
+
+      <p *ngIf="this.user"><strong>Name:</strong> {{job?.recruiter?.first_name}} {{job?.recruiter?.last_name}}</p>
+      <p *ngIf="this.user"><strong>Email:</strong> {{job?.recruiter?.email}}</p>
     </div>
     <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="" />
-  </div>  
+  </div> 
 </div>

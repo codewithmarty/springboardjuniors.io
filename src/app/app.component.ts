@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { User } from './models/user';
+import { Router } from '@angular/router';
 
 interface AuthResponse {
   data: any;
@@ -19,7 +20,8 @@ export class AppComponent {
 
   constructor(
     private authService: AuthService,
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -49,6 +51,7 @@ export class AppComponent {
     )
     this.user = null
     this.authService.setUser(null)
+    this.router.navigate(['/'])
   }
   
 }

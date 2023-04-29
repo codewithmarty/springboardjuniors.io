@@ -5,6 +5,12 @@
   border-radius: 10px;
   background-color: #f8f8f8;
   font-size: 18px;
+  animation: fadeIn 1s; 
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 .job-details > div {
